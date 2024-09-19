@@ -21,15 +21,8 @@
 
     # Employees Only
     # Option shows password
+    # add food or drink or books
+    # see customer data
 
-prompt = "enter password"
-
-message = input(prompt)
-
-while
-if message == "cheese":
-    print("Success")
-else:
-    print("Access denied")
 
             
