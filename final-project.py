@@ -6,27 +6,37 @@ books = ["Rich Dad, Poor Dad", "Harry Potter", "48 Powers", "The Power Of Now", 
 customer_order = []
 customer_data = {}
 
+ascii = (f"""\n\n
+  ____          _                           ____       __  __           
+ / ___|___   __| | ___        _ __         / ___|___  / _|/ _| ___  ___ 
+| |   / _ \ / _` |/ _ \      | '_ \       | |   / _ \| |_| |_ / _ \/ _ |
+| |__| (_) | (_| |  __/      | | | |      | |__| (_) |  _|  _|  __/  __/
+ \____\___/ \__,_|\___|      |_| |_|       \____\___/|_| |_|  \___|\___|
+ 
+ """)
+
+print(ascii)
 print(f"\n\nWelcome to Code n Coffee, How can we help you\n\n")
 
-name_answer = input(f"Please enter your name:\n").title()
-postcode = input(f"Please enter your postcode:\n").upper()
+name_answer = input(f"Please enter your name:\n\n").title()
+postcode = input(f"\n\nPlease enter your postcode:\n\n").upper()
 customer_data['first_name'] = name_answer
 customer_data['postcode'] = postcode
 
 def main_function():
     option_chosen = input(f"\n\nChoose an option:\n\n\n{'     ' .join(options)}\n\n")
-# Collection option chosen
+    
     if option_chosen == "1":
-         #prompt to enter Name
+        
         collections_order()
     if option_chosen == "2":
-         #prompt to enter Name
+        
         delivery_order()
     if option_chosen == "3":
-         #prompt to enter Name
+        
         employee_password()
     if option_chosen == "4":
-        print(f"Goodbye")
+        print(f"\n\nGoodbye\n\n")
         print(f"{customer_data['first_name']}, you have ordered the following:  {'  ,  '.join(customer_order)} and will be delivered to {customer_data['postcode']}")
 
 
@@ -102,14 +112,14 @@ def delivery_order():
 
 
 def employee_password():
-        password = input(f"Please enter employee password:\n\n\n")
+        password = input(f"\n\nPlease enter employee password:\n\n\n")
         if password != "generation":
             print("Incorrect password. Returning to the main menu.")
             main_function()
         else:
             employee_area() 
 def employee_area():
-    employee_choice = input(f"\nChoose:\n 1. Remove Drinks/Foods \n 2. Add Drinks/Foods\n 3. Remove Books\n 4. Add Books\n 5. Return To Main Menu\n")
+    employee_choice = input(f"\nChoose:\n\n1.  Remove Drinks/Foods   2.   Add Drinks/Foods  3.   Remove Books   4.   Add Books   5.   Return To Main Menu\n\n".upper())
 
     if employee_choice == "1":
         for category, items in menu_items.items():
@@ -133,7 +143,7 @@ def employee_area():
         book_choice = input(f"Please type the book name to remove:\n {books}").title()
         if book_choice in books:
                 books.remove(book_choice)
-                print(f"\n\n\Book Removed to {book_choice}\n\n\n")
+                print(f"\n\n\Book Removed : {book_choice}\n\n\n")
         else:
                 print(f"{removed_item.upper()} NOT AVAILABLE! ")
         
@@ -142,7 +152,7 @@ def employee_area():
     elif employee_choice == "4":
         book_choice = input(f"Please type the book name to add:\n {books}").title()
         books.append(book_choice)
-        print(f"\n\nBook Added to {book_choice}\n\n")
+        print(f"\n\nBook Added : {book_choice}\n\n")
 
         employee_area()
 
