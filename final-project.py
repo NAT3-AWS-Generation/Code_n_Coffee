@@ -25,16 +25,16 @@ customer_data['postcode'] = postcode
 
 def main_function():
     option_chosen = input(f"\n\nChoose an option:\n\n\n{'     ' .join(options)}\n\n")
-    
-    if option_chosen == "1":
-        
+
+    if option_chosen == "1":      
         collections_order()
+        
     if option_chosen == "2":
-        
         delivery_order()
+
     if option_chosen == "3":
-        
         employee_password()
+
     if option_chosen == "4":
         print(f"\n\nGoodbye\n\n")
         print(f"{customer_data['first_name']}, you have ordered the following:  {'  ,  '.join(customer_order)} and will be delivered to {customer_data['postcode']}")
@@ -56,6 +56,7 @@ def collections_order():
                     break  
             if not found:
                 print(f"\n\nITEM NOT AVAILABLE - TRY AGAIN\n\n")
+
         elif menu_options == "2":  
             print(f"Which of the following books would you like?:\n\n {'  ,  '.join(books)}\n\n")
             item_chosen = input(f"What book would you like to read?:\n\n").title()
@@ -91,6 +92,7 @@ def delivery_order():
                     break  
             if not found:
                 print(f"\n\nITEM NOT AVAILABLE - TRY AGAIN\n\n")
+                
         elif menu_options == "2":  
             print(f"Which of the following books would you like delivered?:\n\n {'  ,  '.join(books)}\n\n")
             item_chosen = input(f"What book would you like to read?:\n\n").title()
